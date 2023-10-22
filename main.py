@@ -1,4 +1,5 @@
 import  phonenumbers
+import opencage
 from number import number
 
 from phonenumbers import  geocoder
@@ -10,3 +11,12 @@ print(location)
 from phonenumbers import carrier
 service_pro = phonenumbers.parse(number)
 print(carrier.name_for_number(service_pro,"en"))
+
+from opencage.geocoder import OpenCageGeocode
+
+key = '97576a1b029040dd9f9a5f3ab97433fa'
+
+geocoder = OpenCageGeocode(key)
+query = str(location)
+results = geocoder.geocode(query)
+print(results)
